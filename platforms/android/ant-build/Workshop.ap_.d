@@ -93,6 +93,8 @@ C:\projectes\workshop\platforms\android\assets\www\assets\ratchet\fonts\ratchico
 C:\projectes\workshop\platforms\android\assets\www\assets\ratchet\fonts\ratchicons.ttf \
 C:\projectes\workshop\platforms\android\assets\www\assets\ratchet\fonts\ratchicons.woff \
 C:\projectes\workshop\platforms\android\assets\www\js\app.js \
+C:\projectes\workshop\platforms\android\assets\www\js\EmployeeListView.js \
+C:\projectes\workshop\platforms\android\assets\www\js\HomeView.js \
 C:\projectes\workshop\platforms\android\assets\www\js\services \
 C:\projectes\workshop\platforms\android\assets\www\js\services\json \
 C:\projectes\workshop\platforms\android\assets\www\js\services\localstorage \

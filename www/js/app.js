@@ -1,10 +1,17 @@
 // We use an "Immediate Function" to initialize the application to avoid leaving anything behind in the global scope
+
+//TO TEST THE APPLICATION TO YOUR ANDROID DEVICE USE THE COMMAND: cordova run android
 (function () {
+
+    /* -------------------------- Declaration of html Templates --------------------------- */
+    HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
+    EmployeeListView.prototype.template = Handlebars.compile($("#employee-list-tpl").html());
 
     /* ---------------------------------- Local Variables ---------------------------------- */
     var service = new EmployeeService();
     service.initialize().done(function () {
         console.log("Service initialized");
+        $('body').html(new HomeView(service).render().$el);
     });
 
     /* --------------------------------- Event Registration -------------------------------- */
@@ -21,23 +28,5 @@
             };
         }
     }, false);
-
-    $('.search-key').on('keyup', findByName);
-    $('.help-btn').on('click', function() {
-        alert("Employee Directory v3.4");
-    });
-
-    /* ---------------------------------- Local Functions ---------------------------------- */
-    function findByName() {
-        service.findByName($('.search-key').val()).done(function (employees) {
-            var l = employees.length;
-            var e;
-            $('.employee-list').empty();
-            for (var i = 0; i < l; i++) {
-                e = employees[i];
-                $('.employee-list').append('<li><a href="#employees/' + e.id + '">' + e.firstName + ' ' + e.lastName + '</a></li>');
-            }
-        });
-    }
 
 }());
